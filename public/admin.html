@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadastroHub | Administração</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo">Cadastro<span>Hub.</span></div>
+
+        <nav>
+            <a href="home.html">Início</a>
+            <button class="btn-sair" onclick="sair()">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container admin-container">
+
+        <section class="card">
+
+            <h1>Gerenciamento de usuários</h1>
+
+            <p class="subtitulo">
+                Consulte, edite e gerencie os usuários cadastrados.
+            </p>
+
+            <div class="busca">
+                <input type="text" id="buscarCPF"
+                    placeholder="Digite o CPF para pesquisar">
+
+                <button onclick="buscarUsuario()">Buscar</button>
+                <button class="btn-secundario"
+                    onclick="listarUsuarios()">Limpar</button>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaUsuarios"></tbody>
+                </table>
+            </div>
+
+            <h2 class="titulo-edicao">Editar usuário</h2>
+
+            <form id="formEdicao" class="grid-form">
+
+                <input type="hidden" id="editCpfOriginal">
+
+                <div>
+                    <label>Nome</label>
+                    <input type="text" id="editNome" required>
+                </div>
+
+                <div>
+                    <label>Sobrenome</label>
+                    <input type="text" id="editSobrenome" required>
+                </div>
+
+                <div>
+                    <label>CPF</label>
+                    <input type="text" id="editCpf" required>
+                </div>
+
+                <div>
+                    <label>E-mail</label>
+                    <input type="email" id="editEmail" required>
+                </div>
+
+                <div>
+                    <label>Telefone</label>
+                    <input type="tel" id="editTelefone" required>
+                </div>
+
+                <div>
+                    <label>Rua</label>
+                    <input type="text" id="editRua" required>
+                </div>
+
+                <div>
+                    <label>CEP</label>
+                    <input type="text" id="editCep" required>
+                </div>
+
+                <div>
+                    <label>Cidade</label>
+                    <input type="text" id="editCidade" required>
+                </div>
+
+                <div>
+                    <label>Estado</label>
+                    <input type="text" id="editEstado" required>
+                </div>
+
+                <div>
+                    <label>Nova senha (opcional)</label>
+                    <input type="password" id="editSenha"
+                        placeholder="Deixe vazio para manter">
+                </div>
+
+                <button class="btn-secundario" onclick="limparBusca()">
+    Limpar
+</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
